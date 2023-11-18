@@ -13,8 +13,9 @@ import app from './config/app';
       useFactory: async (configService: ConfigService) => ({
         prefix: 'bbachain',
         redis: {
+          port: +configService.get('redis.port'),
           host: configService.get('redis.host'),
-          port: configService.get('redis.port'),
+          password: configService.get('redis.pass'),
         },
       }),
       inject: [ConfigService],

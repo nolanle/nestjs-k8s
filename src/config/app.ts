@@ -3,7 +3,8 @@ export default () => ({
   host: process.env.HOSTNAME || 'NestJS - K8S',
 
   redis: {
-    host: process.env.QUEUE_HOST || 'localhost',
     port: +process.env.QUEUE_PORT || 6379,
+    host: process.env.QUEUE_HOST || 'localhost',
+    pass: process.env.QUEUE_PASS,
   },
 });
